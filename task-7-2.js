@@ -20,3 +20,11 @@ const ingredients = [
     'Приправы',
 ];
 const listForAddingItems = document.querySelector(`#ingredients`);
+const makeProductIngredient = ingredients => {
+  const listForAddingItems = document.createElement('li');
+  listForAddingItems.classList.add('ingredients-list');
+  listForAddingItems.textContent = ingredients;
+  return listForAddingItems;
+};
+const ul = ingredients.map(makeProductIngredient);
+listForAddingItems.append(...ul);
